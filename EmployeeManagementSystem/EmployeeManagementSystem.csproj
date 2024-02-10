@@ -60,10 +60,16 @@
     </Compile>
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\BasicInfo.cs" />
+    <Compile Include="Models\EmgContactInfo.cs" />
+    <Compile Include="Models\HolidayInfo.cs" />
+    <Compile Include="Models\SalaryInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BasicInfoServices.cs" />
     <Compile Include="Services\BDConnection.cs" />
+    <Compile Include="Services\EmgContactInfoServices.cs" />
+    <Compile Include="Services\HolidayInfoServices.cs" />
+    <Compile Include="Services\SalaryInfoServices.cs" />
     <EmbeddedResource Include="BasicInformation.resx">
       <DependentUpon>BasicInformation.cs</DependentUpon>
     </EmbeddedResource>
