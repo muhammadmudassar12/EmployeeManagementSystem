@@ -34,10 +34,10 @@ namespace EmployManagementSystemAPIs.Services.EmgContactInfoServices
             using (IDbConnection connection = new SqlConnection(DBConnection.dbConnectionString))
             {
                 DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@BasicId", emgcontactinfo.BasicId);
                 parameters.Add("@EmgContactName", emgcontactinfo.EmgContactName);
                 parameters.Add("@EmgContactPhone", emgcontactinfo.EmgContactPhone);
                 parameters.Add("@EmgContactEmail", emgcontactinfo.EmgContactEmail);
-                parameters.Add("@BasicId", emgcontactinfo.BasicId);
                 parameters.Add("@LastInsertedId", dbType: DbType.Int32, direction: ParameterDirection.Output);
                 await connection.ExecuteAsync("PostEmgContactInfo", parameters, commandType: CommandType.StoredProcedure);
                 int LastInsertedId = parameters.Get<int>("@LastInsertedId");
@@ -49,10 +49,10 @@ namespace EmployManagementSystemAPIs.Services.EmgContactInfoServices
             using (IDbConnection connection = new SqlConnection(DBConnection.dbConnectionString))
             {
                 DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@BasicId", emgcontactinfo.BasicId);
                 parameters.Add("@EmgContactName", emgcontactinfo.EmgContactName);
                 parameters.Add("@EmgContactPhone", emgcontactinfo.EmgContactPhone);
                 parameters.Add("@EmgContactEmail", emgcontactinfo.EmgContactEmail);
-                parameters.Add("@BasicId", emgcontactinfo.BasicId);
                 parameters.Add("@Id", emgcontactinfo.Id);
                 var result = await connection.ExecuteAsync("UpdateEmgContactInfo", parameters, commandType: CommandType.StoredProcedure);
                 return result;

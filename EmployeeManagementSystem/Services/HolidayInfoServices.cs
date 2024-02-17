@@ -33,7 +33,8 @@ namespace EmployManagementSystemAPIs.Services.HolidayInfoServices
         {
             using (IDbConnection connection = new SqlConnection(DBConnection.dbConnectionString))
             {
-                DynamicParameters parameters = new DynamicParameters();
+                DynamicParameters parameters = new DynamicParameters();             
+                parameters.Add("@HolidayMonth", holidayinfo.HolidayMonth);
                 parameters.Add("@Holidays", holidayinfo.Holidays);
                 parameters.Add("@Leaves", holidayinfo.Leaves);
                 parameters.Add("@TotalHolidays", holidayinfo.TotalHolidays);
@@ -50,6 +51,7 @@ namespace EmployManagementSystemAPIs.Services.HolidayInfoServices
             using (IDbConnection connection = new SqlConnection(DBConnection.dbConnectionString))
             {
                 DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@HolidayMonth", holidayinfo.HolidayMonth);
                 parameters.Add("@Holidays", holidayinfo.Holidays);
                 parameters.Add("@Leaves", holidayinfo.Leaves);
                 parameters.Add("@TotalHolidays", holidayinfo.TotalHolidays);
